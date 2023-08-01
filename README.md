@@ -134,7 +134,8 @@ You can deploy this project using: GitHub Pages
 
 👤 **MenendezON**
 
-- GitHub: [@githubhandle](https://github.com/MenendezON)
+- GitHub: [@MenendezON](https://github.com/MenendezON)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/menendezon/)
 
 👤 **Ye Min Thu**
 
