@@ -1,14 +1,11 @@
-import _ from 'lodash';
 import './css/style.css';
 
-function component() {
-  const element = document.createElement('div');
+const main = document.querySelector('main');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+main.innerHTML = '';
 
-  return element;
+for (let i = 0; i <= 7; i += 1) {
+  const div = document.createElement('div');
+  div.classList.add('cards');
+  main.appendChild(div);
 }
-
-document.body.appendChild(component());
