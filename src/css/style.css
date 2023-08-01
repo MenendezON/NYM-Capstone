@@ -15,10 +15,10 @@ main {
   padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: space-between;
+  gap: 10px;
   margin: 0 auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 header {
@@ -44,11 +44,49 @@ li a {
 
 .cards {
   width: 300px;
-  height: 300px;
+  height: 290px;
   background-color: rgb(76, 120, 120);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards > img {
+  height: 200px;
+}
+
+.cards > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  background-color: rgb(14, 53, 71);
+  padding: 4px 0;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.cards > div > .like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards > div > .like > i {
+  font-size: 25px;
+}
+
+.cards > div > .like > p {
+  margin: 0;
+}
+
+.cards > button {
+  padding: 5px 10px;
+  font-weight: bold;
 }
 
 footer {
+  margin-top: 5px;
   height: 4vh;
   padding-top: 5px;
   text-align: center;
