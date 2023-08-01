@@ -59,9 +59,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Send and receive data from an API]**
-- **[Like and Comment]**
-- **[Counters]**
+- **Send and receive data from an API**
+- **Like and Comment**
+- **Counters**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
