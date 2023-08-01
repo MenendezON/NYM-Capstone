@@ -150,6 +150,7 @@ You can deploy this project using: GitHub Pages.
 - [ ] **[Create Responsive Web Design]**
 - [ ] **[Add reservation popup]**
 - [ ] **[Add animation]**
+- [ ] **[Add new tabs]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
