@@ -3,13 +3,15 @@ import './css/style.css';
 const main = document.querySelector('main');
 
 main.innerHTML = '';
+
+const apiUrl = 'https://api.tvmaze.com/shows';
+
 const popupLaunch = () => {
   const back = document.createElement('div');
   back.classList.add('fullScreen');
   const popup = document.createElement('div');
   popup.classList.add('popup');
   const side0 = document.createElement('div');
-  side0.innerHTML = '<img src="https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg" alt="">';
   popup.appendChild(side0);
   const side1 = document.createElement('div');
   side1.innerHTML = '<h2>Titre</h2><h3><em>by Autheur</em></h3><p><em>added créé par </em></p><p>description</p>';
@@ -26,26 +28,27 @@ const popupLaunch = () => {
   document.body.appendChild(back);
   return false;
 };
-for (let i = 0; i <= 5; i += 1) {
+
+const displayCards = (elem) => {
   const div = document.createElement('div');
   div.classList.add('cards');
   const img = document.createElement('img');
-  img.src = 'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg';
+  img.src = `${elem.image.medium}`;
   const titles = document.createElement('div');
   const title = document.createElement('div');
   title.classList.add('title');
   const p = document.createElement('p');
-  p.textContent = `Titre ${i + 1}`;
+  p.textContent = `${elem.name}`;
   title.appendChild(p);
   const like = document.createElement('div');
   like.classList.add('like');
   const icon = document.createElement('i');
   icon.classList.add('fa', 'fa-heart-o');
   icon.addEventListener('click', () => {
-    console.log('You just like this image');
+
   });
   const text = document.createElement('p');
-  text.textContent = '0 Like';
+  text.textContent = '0 like';
   icon.appendChild(text);
   like.appendChild(icon);
   like.appendChild(text);
@@ -57,9 +60,20 @@ for (let i = 0; i <= 5; i += 1) {
   button.addEventListener('click', () => {
     popupLaunch();
   });
-
   div.appendChild(img);
   div.appendChild(titles);
   div.appendChild(button);
   main.appendChild(div);
-}
+};
+
+const getScores = async () => {
+  const response = await fetch(`${apiUrl}`);
+  const json = await response.json();
+  json.forEach((element) => {
+    displayCards(element);
+  });
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  getScores();
+});
