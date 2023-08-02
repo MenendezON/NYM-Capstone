@@ -3,3 +3,19 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+header, main{
+  width:1024px; margin:0 auto
+}
+header{
+  height:12vh;
+}
+main{
+  height: 80vh;
+  padding:10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
