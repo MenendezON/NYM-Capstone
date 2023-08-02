@@ -9,16 +9,16 @@ const popupLaunch = () => {
   const popup = document.createElement('div');
   popup.classList.add('popup');
   const side0 = document.createElement('div');
-  side0.innerHTML = `<img src="https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg" alt="">`;
+  side0.innerHTML = '<img src="https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg" alt="">';
   popup.appendChild(side0);
   const side1 = document.createElement('div');
-  side1.innerHTML = `<h2>Titre</h2><h3><em>by Autheur</em></h3><p><em>added créé par </em></p><p>description</p>`;
+  side1.innerHTML = '<h2>Titre</h2><h3><em>by Autheur</em></h3><p><em>added créé par </em></p><p>description</p>';
   popup.appendChild(side1);
   const link = document.createElement('a');
   link.innerText = 'Close this';
-  link.addEventListener('click', ()=>{
+  link.addEventListener('click', () => {
     document.body.removeChild(document.querySelector('.fullScreen'));
-  return false;
+    return false;
   });
   link.href = '#';
   side1.appendChild(link);
