@@ -6,17 +6,18 @@ main.innerHTML = '';
 
 const apiUrl = 'https://api.tvmaze.com/shows';
 
-const popupLaunch = () => {
+const popupLaunch = (elem) => {
   const back = document.createElement('div');
   back.classList.add('fullScreen');
   const popup = document.createElement('div');
   popup.classList.add('popup');
   const side0 = document.createElement('div');
-  popup.appendChild(side0);
   const img = document.createElement('img');
   img.src = elem.image.original;
   img.alt = elem.name;
   side0.appendChild(img);
+  popup.appendChild(side0);
+  const side1 = document.createElement('div');
   const title = document.createElement('h2');
   title.textContent = elem.name;
   const subTitle = document.createElement('h3');
@@ -24,7 +25,7 @@ const popupLaunch = () => {
   const div = document.createElement('div');
   div.innerHTML = (elem.summary).replace('<b>', '');
   const ul = document.createElement('ul');
-  for (let i = 0; i < elem.genres.length; i++) {
+  for (let i = 0; i < elem.genres.length; i += 1) {
     const li = document.createElement('li');
     li.textContent = elem.genres[i];
     ul.appendChild(li);
@@ -33,8 +34,6 @@ const popupLaunch = () => {
   side1.appendChild(subTitle);
   side1.appendChild(div);
   side1.appendChild(ul);
-
-  const side1 = document.createElement('div');
   popup.appendChild(side1);
   const link = document.createElement('a');
   link.innerText = 'Close this';
@@ -78,7 +77,7 @@ const displayCards = (elem) => {
   const button = document.createElement('button');
   button.textContent = 'Comments';
   button.addEventListener('click', () => {
-    popupLaunch();
+    popupLaunch(elem);
   });
   div.appendChild(img);
   div.appendChild(titles);
