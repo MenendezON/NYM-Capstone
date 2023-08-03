@@ -30,7 +30,7 @@
 
 # 📖 [NYM-Capstone] <a name="about-project"></a>
 
-**[]**
+This website is specifically crafted for exploring movie details. It offers the added convenience of leaving comments by simply clicking the designated button, and you can express your appreciation for movies by clicking the "likes" button. Explore the captivating realm of films, express your thoughts, and reveal your passion!
 
 ## 🛠 Built With <a name="built-with"></a>
 
