@@ -130,7 +130,7 @@ footer {
 }
 
 .fullScreen .popup div img {
-  width: 100%;
+  width: 75%;
 }
 
 .fullScreen a {
@@ -146,4 +146,18 @@ footer {
   padding: 5px;
   margin-top: 1em;
   color: var(--textColor);
+}
+
+.fullScreen ul{
+  padding:0;
+}
+.fullScreen ul li{
+  list-style: none;
+  display:inline;
+  background-color: rgb(35, 41, 61);
+  color:white;
+  cursor:pointer;
+  padding:5px;
+  margin:0 5px 0 0;
+  border-radius: 5px;
 }
