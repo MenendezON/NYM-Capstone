@@ -148,16 +148,17 @@ footer {
   color: var(--textColor);
 }
 
-.fullScreen ul{
-  padding:0;
+.fullScreen ul {
+  padding: 0;
 }
-.fullScreen ul li{
+
+.fullScreen ul li {
   list-style: none;
-  display:inline;
+  display: inline;
   background-color: rgb(35, 41, 61);
-  color:white;
-  cursor:pointer;
-  padding:5px;
-  margin:0 5px 0 0;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px 0 0;
   border-radius: 5px;
 }

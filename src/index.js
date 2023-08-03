@@ -13,8 +13,28 @@ const popupLaunch = () => {
   popup.classList.add('popup');
   const side0 = document.createElement('div');
   popup.appendChild(side0);
+  const img = document.createElement('img');
+  img.src = elem.image.original;
+  img.alt = elem.name;
+  side0.appendChild(img);
+  const title = document.createElement('h2');
+  title.textContent = elem.name;
+  const subTitle = document.createElement('h3');
+  subTitle.textContent = `${elem.type} | ${elem.language}`;
+  const div = document.createElement('div');
+  div.innerHTML = (elem.summary).replace('<b>', '');
+  const ul = document.createElement('ul');
+  for (let i = 0; i < elem.genres.length; i++) {
+    const li = document.createElement('li');
+    li.textContent = elem.genres[i];
+    ul.appendChild(li);
+  }
+  side1.appendChild(title);
+  side1.appendChild(subTitle);
+  side1.appendChild(div);
+  side1.appendChild(ul);
+
   const side1 = document.createElement('div');
-  side1.innerHTML = '<h2>Titre</h2><h3><em>by Autheur</em></h3><p><em>added créé par </em></p><p>description</p>';
   popup.appendChild(side1);
   const link = document.createElement('a');
   link.innerText = 'Close this';
