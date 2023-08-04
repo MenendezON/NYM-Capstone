@@ -74,6 +74,7 @@ li a {
 
 .cards > div > .like > i {
   font-size: 25px;
+  cursor: pointer;
 }
 
 .cards > div > .like > p {

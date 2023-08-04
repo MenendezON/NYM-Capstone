@@ -1,10 +1,35 @@
 import './css/style.css';
 
+const apiUrl = 'https://api.tvmaze.com/shows';
 const main = document.querySelector('main');
-
 main.innerHTML = '';
 
-const apiUrl = 'https://api.tvmaze.com/shows';
+const getLikes = async () => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/likes/');
+  if (response.headers.get('content-type').includes('application/json')) {
+    const data = await response.json();
+    data.forEach((like) => {
+      document.getElementsByClassName(like.item_id)[0].innerHTML = `${like.likes} likes`;
+    });
+    return data;
+  }
+  const data = await response.text();
+  return data;
+};
+
+const addLike = async (elem) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/likes/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: elem,
+    }),
+  }).then(() => {
+    getLikes();
+  });
+};
 
 const popupLaunch = (elem) => {
   const back = document.createElement('div');
@@ -62,11 +87,12 @@ const displayCards = (elem) => {
   const like = document.createElement('div');
   like.classList.add('like');
   const icon = document.createElement('i');
-  icon.classList.add('fa', 'fa-heart-o');
+  icon.classList.add('fa', 'fa-heart');
   icon.addEventListener('click', () => {
-
+    addLike(elem.id);
   });
   const text = document.createElement('p');
+  text.classList.add(elem.id);
   text.textContent = '0 like';
   icon.appendChild(text);
   like.appendChild(icon);
@@ -95,4 +121,5 @@ const getScores = async () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   getScores();
+  getLikes();
 });
