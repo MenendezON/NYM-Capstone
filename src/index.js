@@ -3,6 +3,7 @@ import './css/style.css';
 const apiUrl = 'https://api.tvmaze.com/shows';
 const main = document.querySelector('main');
 main.innerHTML = '';
+
 const getComments = async (id) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/comments?item_id=${id}`);
   if (response.headers.get('content-type').includes('application/json')) {
@@ -24,6 +25,7 @@ const getComments = async (id) => {
   const data = await response.text();
   return data;
 };
+
 const getLikes = async () => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/likes/');
   if (response.headers.get('content-type').includes('application/json')) {
@@ -36,6 +38,7 @@ const getLikes = async () => {
   const data = await response.text();
   return data;
 };
+
 const addComment = async (id, username, comment) => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/comments', {
     method: 'POST',
@@ -54,6 +57,7 @@ const addComment = async (id, username, comment) => {
   getComments(id);
   return response.text();
 };
+
 const addLike = async (elem) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/likes/', {
     method: 'POST',
@@ -74,12 +78,14 @@ const popupLaunch = (elem) => {
   const popup = document.createElement('div');
   popup.classList.add('popup');
   const side0 = document.createElement('div');
+  side0.classList.add('cover');
   const img = document.createElement('img');
   img.src = elem.image.original;
   img.alt = elem.name;
   side0.appendChild(img);
   popup.appendChild(side0);
   const side1 = document.createElement('div');
+  side1.classList.add('details');
   const title = document.createElement('h2');
   title.textContent = elem.name;
   const subTitle = document.createElement('h3');
@@ -97,7 +103,33 @@ const popupLaunch = (elem) => {
   side1.appendChild(div);
   side1.appendChild(ul);
   popup.appendChild(side1);
+
   const comments = document.createElement('div');
+  comments.textContent = 'Hello';
+  comments.classList.add('comments');
+
+  side1.appendChild(comments);
+
+  const form = document.createElement('form');
+  const user = document.createElement('input');
+  const hr = document.createElement('hr');
+  user.type = 'text';
+  user.placeholder = 'Type your username';
+  const comment = document.createElement('textarea');
+  comment.placeholder = 'Type your comment';
+  comment.rows = 2;
+  const btn = document.createElement('input');
+  btn.type = 'submit';
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addComment(elem.id, user.value, comment.value);
+  });
+  form.appendChild(user);
+  form.appendChild(hr);
+  form.appendChild(comment);
+  form.appendChild(btn);
+  side1.appendChild(form);
+
   const link = document.createElement('a');
   link.innerText = 'Close this';
   link.addEventListener('click', () => {
@@ -108,6 +140,8 @@ const popupLaunch = (elem) => {
   side1.appendChild(link);
   back.appendChild(popup);
   document.body.appendChild(back);
+
+  getComments(elem.id);
   return false;
 };
 

@@ -182,6 +182,7 @@ footer {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 form {
   border: 1px solid gray;
   padding: 3px;
@@ -189,6 +190,7 @@ form {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 form > input,
 form > textarea {
   width: 99%;
@@ -196,13 +198,14 @@ form > textarea {
   padding: 2px;
   outline: none;
 }
+
 .commentStyle {
   border: 1px solid gray;
   padding: 3px;
   margin-bottom: 3px;
   border-radius: 5px;
 }
-.commentStyle:hover {
-  background-color: #EFEFEF;
-}
 
+.commentStyle:hover {
+  background-color: #efefef;
+}
