@@ -10,7 +10,7 @@ const getComments = async (id) => {
     const data = await response.json();
     const element = document.querySelector('.comments');
     if (element) {
-      element.innerHTML = '';
+      element.innerHTML = `Comments (${data.length})`;
       data.forEach((comment) => {
         element.innerHTML += `
         <div class="commentStyle">
@@ -24,6 +24,11 @@ const getComments = async (id) => {
   }
   const data = await response.text();
   return data;
+};
+
+const countItems = () => {
+  const items = document.querySelectorAll('.cards');
+  return items.length;
 };
 
 const getLikes = async () => {
@@ -186,11 +191,11 @@ const displayCards = (elem) => {
 const getScores = async () => {
   const response = await fetch(`${apiUrl}`);
   const json = await response.json();
-  const link = document.querySelector('a');
-  link.innerHTML = `Home (${json.length})`;
   json.forEach((element) => {
     displayCards(element);
   });
+  const link = document.querySelector('a');
+  link.innerHTML = `Home (${countItems()})`;
 };
 
 window.addEventListener('DOMContentLoaded', () => {
