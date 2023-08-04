@@ -114,6 +114,8 @@ const displayCards = (elem) => {
 const getScores = async () => {
   const response = await fetch(`${apiUrl}`);
   const json = await response.json();
+  const link = document.querySelector('a');
+  link.innerHTML = `Home (${json.length})`;
   json.forEach((element) => {
     displayCards(element);
   });
