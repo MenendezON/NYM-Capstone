@@ -1,4 +1,4 @@
-import countItems from 'module/countItems.js';
+import countItems from './module/countItem.js';
 import './css/style.css';
 
 const apiUrl = 'https://api.tvmaze.com/shows';
