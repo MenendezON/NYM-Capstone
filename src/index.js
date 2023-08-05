@@ -8,7 +8,7 @@ main.innerHTML = '';
 const getComments = async (id) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/comments?item_id=${id}`);
   if (response.headers.get('content-type').includes('application/json')) {
-    const data = await response.json();
+    const data = Array.from(await response.json());
     const element = document.querySelector('.comments');
     if (data.length === 0) {
       if (element) {
