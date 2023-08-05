@@ -1,4 +1,6 @@
+import countItems from 'module/countItems.js';
 import './css/style.css';
+
 
 const apiUrl = 'https://api.tvmaze.com/shows';
 const main = document.querySelector('main');
@@ -24,11 +26,6 @@ const getComments = async (id) => {
   }
   const data = await response.text();
   return data;
-};
-
-const countItems = () => {
-  const items = document.querySelectorAll('.cards');
-  return items.length;
 };
 
 const getLikes = async () => {
