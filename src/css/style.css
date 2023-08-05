@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+main {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+main {
+  height: 80vh;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+header {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 150px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+}
+
+.cards {
+  width: 300px;
+  height: 290px;
+  background-color: rgb(76, 120, 120);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards > img {
+  height: 200px;
+}
+
+.cards > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  background-color: rgb(14, 53, 71);
+  padding: 4px 0;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.cards > div > .like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards > div > .like > i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.commentStyle p {
+  margin: 0;
+}
+
+.commentStyle > p:last-child {
+  font-style: italic;
+}
+
+.cards > div > .like > p {
+  margin: 0;
+}
+
+.cards > button {
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 5px;
+  height: 4vh;
+  padding-top: 5px;
+  text-align: center;
+  background-color: silver;
+}
+
+.fullScreen {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  animation: bgColor 1500ms ease-in 0s 1 normal forwards;
+}
+
+@keyframes bgColor {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.fullScreen .popup {
+  width: 80%;
+  background-color: white;
+  margin: 1.5% auto;
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+.fullScreen > .popup > .cover {
+  width: 1024px;
+  height: 85vh;
+}
+
+.fullScreen .popup div img {
+  height: 100%;
+}
+
+.fullScreen a {
+  background-color: var(--textColor);
+  padding: 5px 10px;
+  margin: 10px 0;
+  color: var(--gray);
+  transition: 0.3s all ease-in;
+}
+
+.fullScreen a:hover {
+  background-color: var(--gray);
+  padding: 5px;
+  margin-top: 1em;
+  color: var(--textColor);
+}
+
+.fullScreen ul {
+  padding: 0;
+}
+
+.fullScreen ul li {
+  list-style: none;
+  display: inline;
+  background-color: rgb(35, 41, 61);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px 0 0;
+  border-radius: 5px;
+}
+
+.comments {
+  width: 98.4%;
+  height: 300px;
+  padding: 5px;
+  overflow-y: auto;
+  border: 1px solid gray;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+form {
+  border: 1px solid gray;
+  padding: 3px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+form > input,
+form > textarea {
+  width: 99%;
+  border: 0;
+  padding: 2px;
+  outline: none;
+}
+
+.commentStyle {
+  border: 1px solid gray;
+  padding: 3px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+
+.commentStyle:hover {
+  background-color: #efefef;
+}
