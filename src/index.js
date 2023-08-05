@@ -97,6 +97,7 @@ const popupLaunch = (elem) => {
   side1.appendChild(div);
   side1.appendChild(ul);
   popup.appendChild(side1);
+  const comments = document.createElement('div');
   const link = document.createElement('a');
   link.innerText = 'Close this';
   link.addEventListener('click', () => {
