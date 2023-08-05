@@ -77,6 +77,14 @@ li a {
   cursor: pointer;
 }
 
+.commentStyle p {
+  margin: 0;
+}
+
+.commentStyle > p:last-child {
+  font-style: italic;
+}
+
 .cards > div > .like > p {
   margin: 0;
 }
@@ -122,16 +130,16 @@ footer {
   border-radius: 8px;
   padding: 25px;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
 }
 
-.fullScreen .popup * {
-  flex: 1;
+.fullScreen > .popup > .cover {
+  width: 1024px;
+  height: 85vh;
 }
 
 .fullScreen .popup div img {
-  width: 75%;
+  height: 100%;
 }
 
 .fullScreen a {
@@ -163,3 +171,38 @@ footer {
   margin: 0 5px 0 0;
   border-radius: 5px;
 }
+
+.comments {
+  width: 98.4%;
+  height: 300px;
+  padding: 5px;
+  overflow-y: auto;
+  border: 1px solid gray;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+form {
+  border: 1px solid gray;
+  padding: 3px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+form > input,
+form > textarea {
+  width: 99%;
+  border: 0;
+  padding: 2px;
+  outline: none;
+}
+.commentStyle {
+  border: 1px solid gray;
+  padding: 3px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+.commentStyle:hover {
+  background-color: #EFEFEF;
+}
+
