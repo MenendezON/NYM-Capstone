@@ -10,15 +10,19 @@ const getComments = async (id) => {
   if (response.headers.get('content-type').includes('application/json')) {
     const data = await response.json();
     const element = document.querySelector('.comments');
-    if (element) {
+    if (data === 0) {
+      if (element) {
+        element.innerHTML = `Comments (${data.length})`;
+      }
+    } else if (element) {
       element.innerHTML = `Comments (${data.length})`;
       data.forEach((comment) => {
         element.innerHTML += `
-        <div class="commentStyle">
-        <p><strong>${comment.username}</strong> - ${comment.creation_date}</p>
-        <p>${comment.comment}</p>
-        </div>
-        `;
+          <div class="commentStyle">
+          <p><strong>${comment.username}</strong> - ${comment.creation_date}</p>
+          <p>${comment.comment}</p>
+          </div>
+          `;
       });
     }
     return data;
