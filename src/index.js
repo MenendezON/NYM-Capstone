@@ -10,7 +10,7 @@ const getComments = async (id) => {
   if (response.headers.get('content-type').includes('application/json')) {
     const data = await response.json();
     const element = document.querySelector('.comments');
-    if (data === 0) {
+    if (data.length === 0) {
       if (element) {
         element.innerHTML = `Comments (${data.length})`;
       }
