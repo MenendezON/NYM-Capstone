@@ -36,7 +36,24 @@ const getLikes = async () => {
   const data = await response.text();
   return data;
 };
-
+const addComment = async (id, username, comment) => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username,
+      comment,
+      item_id: id,
+    }),
+  });
+  if (response.headers.get('Content-Type') === 'application/json') {
+    return response.json();
+  }
+  getComments(id);
+  return response.text();
+};
 const addLike = async (elem) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xHKFbjrPNRXwlocSctHs/likes/', {
     method: 'POST',
