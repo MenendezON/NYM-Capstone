@@ -70,7 +70,7 @@ This website is specifically crafted for exploring movie details. It offers the 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://menendezon.github.io/NYM-Capstone/dist)
-- [Live Demo Video Link]()
+- [Live Demo Video Link](https://drive.google.com/file/d/1dJoLA18hMTBYI6nXArsyFgPNWXKtRIXV/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
