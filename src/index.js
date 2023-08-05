@@ -198,8 +198,8 @@ const getScores = async () => {
   link.innerHTML = `Home (${countItems()})`;
 };
 
-window.addEventListener('DOMContentLoaded', () => {  
-  getScores().then(()=>{
-   getLikes();
+window.addEventListener('DOMContentLoaded', () => {
+  getScores().then(() => {
+    getLikes();
   });
- });
+});
