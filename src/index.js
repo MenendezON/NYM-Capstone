@@ -1,7 +1,6 @@
 import countItems from 'module/countItems.js';
 import './css/style.css';
 
-
 const apiUrl = 'https://api.tvmaze.com/shows';
 const main = document.querySelector('main');
 main.innerHTML = '';
